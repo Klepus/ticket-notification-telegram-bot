@@ -1,2 +1,2 @@
-# notification-telegram-bot
-Telegram Bot for notifications by tickets
+## Ticket notification telegram bot
+Telegram bot for RZD ticket changes notifications
