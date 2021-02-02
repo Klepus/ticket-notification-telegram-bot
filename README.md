@@ -10,9 +10,6 @@ Telegram bot for RZD ticket changes notifications
 - Spring Data starter
 - Unirest - lib for working with REST calls
 
-## Troubleshooting
-...
-
 ## Release Notes
 Can be found in [RELEASE_NOTES](RELEASE_NOTES.md).
 
