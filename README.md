@@ -1,8 +1,14 @@
 ## Ticket notification telegram bot
 Telegram bot for RZD ticket changes notifications
 
-## Building
-...
+# Technological stack
+- SpringBoot as a skeleton framework
+- Spring Scheduler as a task manager
+- MySQL database as a database for saving user and subscription info
+- Flyway database migration tool
+- Telegram-bot SpringBoot starter
+- Spring Data starter
+- Unirest - lib for working with REST calls
 
 ## Troubleshooting
 ...
@@ -12,9 +18,6 @@ Can be found in [RELEASE_NOTES](RELEASE_NOTES.md).
 
 ## Authors
 * Aleksey Klepinin - [klepus](https://github.com/Klepus)
-
-## Acknowledgments
-...
 
 ## Contributing
 Please, follow [Contributing](CONTRIBUTING.md) page.
