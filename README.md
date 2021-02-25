@@ -1,3 +1,5 @@
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/f5941b57b1a443c19efbf56ec3009706)](https://app.codacy.com/gh/Klepus/ticket-notification-telegram-bot?utm_source=github.com&utm_medium=referral&utm_content=Klepus/ticket-notification-telegram-bot&utm_campaign=Badge_Grade_Settings)
+
 ## Ticket notification telegram bot
 Telegram bot for RZD ticket changes notifications
 
