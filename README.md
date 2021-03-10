@@ -12,11 +12,22 @@ Telegram bot for RZD ticket changes notifications
 - Spring Data starter
 - Unirest - lib for working with REST calls
 
+## Deployment
+Deployment process:
+to deploy application, switch to needed branch and run bash script:
+
+$ bash start.sh ${bot_username} ${bot_token}
+
+Required software:
+- terminal for running bash scripts
+- docker
+- docker-compose
+
 ## Release Notes
 Can be found in [RELEASE_NOTES](RELEASE_NOTES.md).
 
 ## Authors
-* Aleksey Klepinin - [klepus](https://github.com/Klepus)
+* Aleksey Klepinin - [Telegram](https://t.me/klepus)
 
 ## Contributing
 Please, follow [Contributing](CONTRIBUTING.md) page.
