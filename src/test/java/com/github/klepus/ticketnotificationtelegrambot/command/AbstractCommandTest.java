@@ -3,8 +3,10 @@ package com.github.klepus.ticketnotificationtelegrambot.command;
 import com.github.klepus.ticketnotificationtelegrambot.bot.TicketNotificationTelegramBot;
 import com.github.klepus.ticketnotificationtelegrambot.service.SendBotMessageService;
 import com.github.klepus.ticketnotificationtelegrambot.service.SendBotMessageServiceImpl;
+import com.github.klepus.ticketnotificationtelegrambot.service.TelegramUserService;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.telegram.telegrambots.meta.api.methods.send.SendMessage;
 import org.telegram.telegrambots.meta.api.objects.Message;
 import org.telegram.telegrambots.meta.api.objects.Update;
@@ -14,6 +16,7 @@ public abstract class AbstractCommandTest {
 
     protected TicketNotificationTelegramBot bot = Mockito.mock(TicketNotificationTelegramBot.class);
     protected SendBotMessageService sendBotMessageService = new SendBotMessageServiceImpl(bot);
+    protected TelegramUserService telegramUserService = Mockito.mock(TelegramUserService.class);
 
     abstract String getCommandName();
 

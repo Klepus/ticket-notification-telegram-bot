@@ -2,6 +2,8 @@ package com.github.klepus.ticketnotificationtelegrambot.bot;
 
 import com.github.klepus.ticketnotificationtelegrambot.command.CommandContainer;
 import com.github.klepus.ticketnotificationtelegrambot.service.SendBotMessageServiceImpl;
+import com.github.klepus.ticketnotificationtelegrambot.service.TelegramUserService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 import org.telegram.telegrambots.bots.TelegramLongPollingBot;
@@ -22,8 +24,9 @@ public class TicketNotificationTelegramBot extends TelegramLongPollingBot {
 
     private final CommandContainer commandContainer;
 
-    public TicketNotificationTelegramBot() {
-        this.commandContainer = new CommandContainer(new SendBotMessageServiceImpl(this));
+    @Autowired
+    public TicketNotificationTelegramBot(TelegramUserService telegramUserService) {
+        this.commandContainer = new CommandContainer(new SendBotMessageServiceImpl(this), telegramUserService);
     }
 
     @Override

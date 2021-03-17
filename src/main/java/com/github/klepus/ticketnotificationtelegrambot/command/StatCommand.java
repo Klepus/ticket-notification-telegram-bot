@@ -5,27 +5,22 @@ import com.github.klepus.ticketnotificationtelegrambot.service.TelegramUserServi
 import org.springframework.beans.factory.annotation.Autowired;
 import org.telegram.telegrambots.meta.api.objects.Update;
 
-public class StopCommand implements Command {
+public class StatCommand implements Command{
 
     private final SendBotMessageService sendBotMessageService;
     private final TelegramUserService telegramUserService;
 
-    public static final String STOP_MESSAGE = "Пока! Это стоп-сообщение";
+    public final static String STAT_MESSAGE = "Ticket Notification Bot использует %s человек.";
 
     @Autowired
-    public StopCommand(SendBotMessageService sendBotMessageService, TelegramUserService telegramUserService) {
+    public StatCommand(SendBotMessageService sendBotMessageService, TelegramUserService telegramUserService) {
         this.sendBotMessageService = sendBotMessageService;
         this.telegramUserService = telegramUserService;
     }
 
     @Override
     public void execute(Update update) {
-        String chatId = update.getMessage().getChatId().toString();
-        sendBotMessageService.sendMessage(chatId, STOP_MESSAGE);
-
-        telegramUserService.findByChatId(chatId).ifPresent(user -> {
-            user.setActive(false);
-            telegramUserService.save(user);
-        });
+        int activeUserCount = telegramUserService.retrieveAllActiveUsers().size();
+        sendBotMessageService.sendMessage(update.getMessage().getChatId().toString(), String.format(STAT_MESSAGE, activeUserCount));
     }
 }
